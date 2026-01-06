@@ -1,9 +1,8 @@
 IrisIp
 
-<img width="1906" height="905" alt="Ekran görüntüsü 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
-
-
 Gelişmiş Ağ Keşif ve Zafiyet Tarama Aracı
+
+<img width="1906" height="905" alt="Ekran görüntüsü 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
 
 IrisIp, hedef IP veya host üzerinde detaylı ağ analizi ve güvenlik taramaları gerçekleştirmek üzere tasarlanmış, menü tabanlı bir siber güvenlik otomasyon aracıdır.
 Arka planda Nmap ve Nikto gibi endüstri standardı araçları kullanarak sızma testi (pentest) süreçlerinin bilgi toplama aşamasını hızlandırır.
@@ -41,7 +40,7 @@ KURULUM
 
 Projeyi yerel makinenize klonlamak ve gerekli izinleri vermek için:
 
-• git clone https://github.com/KULLANICI_ADI/IrisIp.git
+• git clone https://github.com/osmnabyram/IrisIp.git
 
 • cd IrisIp
 • chmod +x irisip.py
