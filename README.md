@@ -1,4 +1,8 @@
 IrisIp
+
+<img width="1906" height="905" alt="Ekran görüntüsü 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
+
+
 Gelişmiş Ağ Keşif ve Zafiyet Tarama Aracı
 
 IrisIp, hedef IP veya host üzerinde detaylı ağ analizi ve güvenlik taramaları gerçekleştirmek üzere tasarlanmış, menü tabanlı bir siber güvenlik otomasyon aracıdır.
@@ -66,5 +70,3 @@ Bu araç (IrisIp), yalnızca eğitim amaçlı ve izinli sızma testlerinde kulla
 Yetkisiz sistemlere karşı kullanılması kesinlikle yasaktır ve yasal suç teşkil eder.
 
 Geliştirici, bu aracın kötüye kullanımından doğabilecek herhangi bir zarardan sorumlu tutulamaz.
-
-<img width="1906" height="905" alt="Ekran görüntüsü 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
