@@ -1,71 +1,84 @@
-IrisIp
+# IrisIp
 
-Gelişmiş Ağ Keşif ve Zafiyet Tarama Aracı
+Advanced Network Reconnaissance and Vulnerability Scanning Tool
 
-<img width="1906" height="905" alt="Ekran görüntüsü 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
+<img width="1906" height="905" alt="Screenshot 2026-01-07 013434" src="https://github.com/user-attachments/assets/6a0345f4-c617-4097-a4db-563aaf7da9a3" />
 
-IrisIp, hedef IP veya host üzerinde detaylı ağ analizi ve güvenlik taramaları gerçekleştirmek üzere tasarlanmış, menü tabanlı bir siber güvenlik otomasyon aracıdır.
-Arka planda Nmap ve Nikto gibi endüstri standardı araçları kullanarak sızma testi (pentest) süreçlerinin bilgi toplama aşamasını hızlandırır.
+IrisIp is a menu-driven cybersecurity automation tool designed to perform detailed network analysis and security assessments on target IP addresses or hosts.
 
-Manuel olarak çalıştırılması zaman alan karmaşık tarama komutlarını otomatikleştirerek, kullanıcıya hızlı ve raporlanabilir sonuçlar sunar.
+Leveraging industry-standard tools such as Nmap and Nikto in the background, it accelerates the reconnaissance phase of penetration testing (pentest) operations.
 
-TEMEL ÖZELLİKLER
+By automating complex scanning commands that would otherwise be time-consuming to execute manually, it delivers rapid and reportable results to the user.
 
-IrisIp, hedef sistem üzerinde aşağıdaki analizleri gerçekleştirebilir:
+---
 
-• Port Tarama
-Hedef üzerindeki açık TCP/UDP portlarını ve bu portlarda çalışan servisleri tespit eder.
+## Core Features
 
-• Servis ve Versiyon Tespiti
-Çalışan servislerin (Apache, SSH, FTP vb.) üretici ve sürüm bilgilerini analiz eder.
+IrisIp is capable of performing the following analyses on target systems:
 
-• İşletim Sistemi Tespiti
-TCP/IP yığını analizi ile hedefin olası işletim sistemini (Linux, Windows vb.) belirler.
+- **Port Scanning**
+Detects open TCP/UDP ports on the target and identifies services running on those ports.
 
-• Zafiyet Tarama
-Nmap Scripting Engine (NSE) ve Nikto veritabanlarını kullanarak bilinen güvenlik açıklarını (CVE) ve konfigürasyon hatalarını araştırır.
+- **Service and Version Detection**
+Analyzes running services (Apache, SSH, FTP, etc.) to determine vendor and version information.
 
-• Traceroute ve Firewall Tespiti
-Hedefe giden ağ yolunu haritalandırır ve aradaki Firewall / WAF varlığını analiz eder.
+- **Operating System Detection**
+Uses TCP/IP stack analysis to identify the target's likely operating system (Linux, Windows, etc.).
 
-GEREKSİNİMLER
+- **Vulnerability Scanning**
+Leverages Nmap Scripting Engine (NSE) and Nikto databases to identify known security vulnerabilities (CVE) and configuration misconfigurations.
 
-Aracın tam fonksiyonlu çalışabilmesi için aşağıdaki bileşenlerin sistemde yüklü olması gerekir:
+- **Traceroute and Firewall Detection**
+Maps the network path to the target and analyzes the presence of intermediate Firewalls / WAF (Web Application Firewall).
 
-• Python 3.x
-• Nmap
-• Nikto
+---
 
-KURULUM
+## Requirements
 
-Projeyi yerel makinenize klonlamak ve gerekli izinleri vermek için:
+The following components must be installed on the system for the tool to function at full capacity:
 
-• git clone https://github.com/osmnabyram/IrisIp.git
+- Python 3.x
+- Nmap
+- Nikto
 
-• cd IrisIp
-• chmod +x irisip.py
+---
 
-KULLANIM
+## Installation
 
-Aracı başlatmak için terminalde aşağıdaki komutu çalıştırın:
+To clone the project to your local machine and set the required permissions:
 
-• python3 irisip.py
+- `git clone https://github.com/osmnabyram/IrisIp.git`
+- `cd IrisIp`
+- `chmod +x irisip.py`
 
-Program başlatıldığında, tarama seçeneklerini içeren menü tabanlı bir arayüz sunulur.
+---
 
-ÖRNEK KULLANIM SENARYOSU
+## Usage
 
-• Hedef IP veya host adresi girilir
-(Örn: 192.168.1.10 veya scanme.nmap.org)
+To launch the tool, execute the following command in the terminal:
 
-• Menüden istenilen tarama modu seçilir
-(Hızlı Tarama, Kapsamlı Tarama, Zafiyet Analizi vb.)
+- `python3 irisip.py`
 
-• Tarama sonuçları terminal ekranında görüntülenir
+Upon startup, the program presents a menu-driven interface containing scanning options.
 
-YASAL UYARI
+---
 
-Bu araç (IrisIp), yalnızca eğitim amaçlı ve izinli sızma testlerinde kullanılmak üzere geliştirilmiştir.
-Yetkisiz sistemlere karşı kullanılması kesinlikle yasaktır ve yasal suç teşkil eder.
+## Example Usage Scenario
 
-Geliştirici, bu aracın kötüye kullanımından doğabilecek herhangi bir zarardan sorumlu tutulamaz.
+- Target IP address or hostname is entered
+(Example: 192.168.1.10 or scanme.nmap.org)
+
+- Desired scanning mode is selected from the menu
+(Quick Scan, Comprehensive Scan, Vulnerability Analysis, etc.)
+
+- Scan results are displayed on the terminal screen
+
+---
+
+## Legal Notice
+
+IrisIp is developed exclusively for educational purposes and authorized penetration testing only.
+
+Use against unauthorized systems is strictly prohibited and constitutes a legal offense.
+
+The developer assumes no liability for any damages resulting from misuse of this tool.
