@@ -12,7 +12,7 @@ RESET = "\033[0m"
 BOLD = "\033[1m"
 WHITE = "\033[97m"
 GREEN = "\033[92m"
-YELLOW = "\033[93m"
+YELLOW = "\033[34m"
 BLUE = "\033[94m"
 RED = "\033[91m"
 MAGENTA = "\033[1;30m"
@@ -74,15 +74,15 @@ def run_geoip(ip):
             print(f"{RED}[!] HATA: Gecersiz IP veya sorgu basarisiz.{RESET}")
             return
 
-        print(f"{YELLOW} Hedef IP:      {WHITE}{data.get('query')}")
-        print(f"{YELLOW} Ülke:          {WHITE}{data.get('country')} ({data.get('countryCode')})")
-        print(f"{YELLOW} Şehir/Bölge:   {WHITE}{data.get('city')} / {data.get('regionName')}")
-        print(f"{YELLOW} ISP (Şirket):  {WHITE}{data.get('isp')}")
+        print(f"{YELLOW} Kurban IP:      {WHITE}{data.get('query')}")
+        print(f"{YELLOW} Ulke:          {WHITE}{data.get('country')} ({data.get('countryCode')})")
+        print(f"{YELLOW} Sehir/Bolge:   {WHITE}{data.get('city')} / {data.get('regionName')}")
+        print(f"{YELLOW} ISP (Sirket):  {WHITE}{data.get('isp')}")
         print(f"{YELLOW} Organizasyon:  {WHITE}{data.get('org')}")
         print(f"{YELLOW} Zaman Dilimi:  {WHITE}{data.get('timezone')}")
-        print(f"{YELLOW} Koordinatlar:  {WHITE}{data.get('lat')}, {data.get('lon')}")
-
-        print(f"{CYAN} [Harita Linki]: https://www.google.com/maps/place/{data.get('lat')},{data.get('lon')}{RESET}")
+        print(f"{YELLOW} Koordinat:  {WHITE}{data.get('lat')}, {data.get('lon')}")
+        print(f"\n")
+        print(f"{YELLOW} [Harita Linki]: https://www.google.com/maps/place/{data.get('lat')},{data.get('lon')}{RESET}")
 
     except Exception as e:
         print(f"{RED}[!] Baglanti hatasi: {e}{RESET}")
@@ -187,17 +187,18 @@ def main():
             2: "nmap -sV --version-intensity 9 -O --osscan-guess -Pn {ip}",
             3: "nmap -F {ip}",
             4: "nmap -sU -sS -p U:5353,1900,62078,8008,8009,T:62078,5555,5000,7000 -Pn -n --script=dns-service-discovery,upnp-info {ip}",
-            5: "nmap -sS -sU -p- -A -T4 -Pn --min-rate 1000 {ip}",
+            5: "nmap -sS -sU --top-ports 1000 -A -T4 -Pn --min-rate 1000 {ip}",
             6: "nmap -sV --script vuln --script-args=unsafe=1 -Pn {ip}",
             7: "nmap -p- -sV -T4 --min-rate 2000 -Pn --open {ip}",
-            8: "nmap -sA -Pn {ip}",
-            9: "nmap -sS -D RND:10 -Pn -T3 {ip}",
-            10: "nmap -f -g 53 --mtu 24 -Pn {ip}",
+            8: "nmap -sA --reason -Pn {ip}",
+            9: "nmap -sS -D RND:10 --reason -T3 -Pn {ip}",
+            10: "nmap -g 53 --mtu 24 --reason -Pn {ip}",
             11: "whois -a --verbose {ip}",
             13: "dig {ip} A AAAA MX NS TXT SOA +noall +answer"
         }
         
         if choice == 12:
+            # Kullanicidan IP al
             raw_ipp = input(MENU_WHITE + "Kurban IP: " + RESET)
             ip = raw_ipp.replace(";", "").replace("&", "").strip()
             
